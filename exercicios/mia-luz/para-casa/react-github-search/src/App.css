@@ -1,0 +1,22 @@
+.main__container {
+	padding-top: 2rem;
+	background-color: var(--main-backgroundcolor);
+	width: 100%;
+	min-height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 3rem;
+	margin-bottom: 1rem;
+
+}
+
+.repos__container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	width: 65%;
+	gap: 2rem;
+	max-height: 95%;
+	margin-bottom: 1rem;
+
+}

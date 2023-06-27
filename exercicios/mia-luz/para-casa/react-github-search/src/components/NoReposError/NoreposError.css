@@ -1,0 +1,15 @@
+
+.no-repos__container{
+	width: 65%;
+	height: 10rem;
+	max-height: 95%;
+	margin-bottom: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.no-repos__title{
+	color: var(--primary);
+	text-align: center;
+	font-size: 1.5rem;
+}
