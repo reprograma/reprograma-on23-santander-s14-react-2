@@ -1,0 +1,52 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  will-change: filter;
+  transition: filter 300ms;
+  width: 100%;  
+  max-width: 207px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #ffab6256);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #ffab62);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.image {  
+  max-width: 20%;
+  position: absolute;
+  top: 50px;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25rem;
+}
+
+.header {
+  display: block;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
