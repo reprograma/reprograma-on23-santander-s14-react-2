@@ -1,20 +1,21 @@
-import { useState } from 'react'
 import './App.css'
-import Axios from 'axios'
-import Header from './components/Header'
-import Subtext from './components/Subtext'
-import Input from './Search'
+import { useState } from 'react'
+import Statics from './components/Statics'
+import Input from './components/Input'
+import RepoList from './components/RepoList'
 import Footer from './components/Footer'
 
 function App() {
-  const handleChange = (e) => setInputValue(e.target.value)
+  const [repositories, setRepos] = useState([])
+
+
 
   return (
     <>
-    <Header />
-    <Subtext/>
-    <Input placeholder="nome do repositório" handleChange={handleChange}/>
-    <Footer/>
+    <Statics/>
+    <Input setRepos={setRepos}/>
+    <RepoList repositories={repositories}/>
+    <Footer />
     </>
 
   )
