@@ -15,12 +15,12 @@ function Filmes() {
 
   return (
     <div className="cards"> 
-      {filmes.map((filme) => {
+      {filmes.map((repos) => {
         return (
-          <div key={filme.id}>
-            <img src={filme.image} alt={filme.title} />
-            <h1>{filme.title}</h1>
-            <p>{filme.original_title}</p>
+          <div key={repos.id}>
+            <img src={repos.image} alt={filme.title} />
+            <h1>{repos.title}</h1>
+            <p>{repos.original_title}</p>
           </div>
         )
       })}
