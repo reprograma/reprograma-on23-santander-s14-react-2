@@ -23,6 +23,8 @@ body {
   padding: 0;
 }
 
+/* HEADER */
+
 .header_text {
   font-size: 4em;
   line-height: 1.1;
@@ -42,23 +44,7 @@ body {
 
 }
 
-.repos_result {
-  color: var(--shadows);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  /* box-shadow: 0 0 8px #f98080; */
-  border-radius: 8px;
-  margin: 1rem;
-  max-height: 250px;
-  overflow-y: auto;
-  font-size: 0.865em;
-}
-
-
-::placeholder{
-  color: var(--shadows);
-}
+/* INPUT */
 
 input {
   border-radius: 8px;
@@ -78,29 +64,32 @@ input {
 input:hover {
   border-color: var(--hover);
 }
+::placeholder {
+  color: var(--shadows);
+}
 
 
+/* REPOSITORY LIST */
 
-/* button:hover {
-  background-color: var(--shadows);
-  color: var(--primary);
-  border-color: #FF9494;
-  transition: 500ms;
-} */
+.repos_result {
+  color: var(--shadows);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 
+  border-radius: 8px;
+  margin: 1rem;
+  max-height: 250px;
+  overflow-y: auto;
+  font-size: 0.865em;
+}
 
+::-webkit-scrollbar {
+ width: 5px;
+}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
+::-webkit-scrollbar-thumb {
+  width: 10px;
+  background-color: var(--tertiary);
+  border-radius: 8px;
 }

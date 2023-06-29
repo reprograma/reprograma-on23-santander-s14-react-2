@@ -8,8 +8,6 @@ import Footer from './components/Footer'
 function App() {
   const [repositories, setRepos] = useState([])
 
-
-
   return (
     <>
     <Statics/>
