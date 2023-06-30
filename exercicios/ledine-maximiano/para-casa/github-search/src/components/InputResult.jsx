@@ -1,6 +1,8 @@
 const InputResult = ({ result }) => {
     return (
-        <div>{result.name}</div>
+        <div>
+          <a className="repos_link" href={result.html_url} target="_blank">{result.name}</a>
+        </div>
     )
 }
 

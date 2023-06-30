@@ -9,8 +9,9 @@ function Input({ setRepos }) {
     .then((response) => response.json()).then((json) => {
 
         const getRepos = json.filter((repos) => {
-          return value && repos && repos.name && repos.name.toLowerCase().includes(value)
+          return  repos && repos.name && repos.name.toLowerCase().includes(value)
         })
+        // console.log(getRepos)
         setRepos(getRepos)
       })
   }
