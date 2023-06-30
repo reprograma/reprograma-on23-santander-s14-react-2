@@ -1,33 +1,78 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Card from './components/Card'
 import './App.css'
+import Bio from './components/Bio'
+import Axios from 'axios'
+import Title from './components/Title'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [repoData, setRepoData] = useState([])
+  const [inputValue, setInputValue] = useState('')
+  const [filterRepos, setFilterRepos] = useState([])
+
+  function handleChange(event) {
+    setInputValue(event.target.value)
+
+
+  }
+
+
+  function handleClick(event) {
+    event.preventDefault()
+    const repoFiltrados = repoData.filter((repo) => {
+      return repo.full_name.toLowerCase().includes(inputValue.toLowerCase())
+    })
+    setFilterRepos(repoFiltrados)
+
+  }
+
+  useEffect(() => {
+    async function getRepositories() {
+      try {
+        const response = await Axios.get('https://api.github.com/users/petramelissa/repos')
+        setRepoData(response.data)
+      }
+      catch (erro) {
+        console.error("Capturei um erro: " + erro)
+      }
+    }
+    getRepositories()
+  }, [])
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header handleChange={handleChange} handleClick={handleClick}></Header>
+      <main>
+        <div className='bio-container'>
+          <Bio></Bio>
+        </div>
+
+        <div className='list-container'>
+
+          { filterRepos.length > 0 ?
+          filterRepos.map((repo) => {
+
+            return (
+              <Card
+                id={repo.id}
+                link={repo.html_url}
+                linguagem={repo.language}
+                titulo={repo.full_name}
+                descricao={repo.description}
+              />
+            )
+          }) : 
+          <Title text="Busque por um repositório válido"></Title>
+        } 
+
+        </div>
+
+
+      </main>
+
+      <Footer></Footer>
     </>
   )
 }
