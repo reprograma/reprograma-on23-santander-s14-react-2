@@ -1,44 +1,58 @@
-import { useEffect, useState } from 'react';
-import Axios from 'axios';
-// import Input from "./Input"
-// import Button from "./Button"
+import { useEffect, useState } from "react"
+import Axios from 'axios'
+import Subtitle from "./Subtitle"
+import Text from "./Text"
 
-
+import { GoArrowRight } from "react-icons/go";
 
 const Search = () => {
-  const [repo, setRepo] = useState([]);
+  const [inputValue, setInputValue] = useState('')
+  const [reposFromApi, setReposFromApi] = useState([])
+  const [reposFiltered, setReposFiltered] = useState([])
+
+  const handleChange = (e) => setInputValue(e.target.value)
 
   useEffect(() => {
-    async function getRepo() {
+    const getData = async () => {
       try {
-        const response = await Axios.get(
-          'https://api.github.com/users/angelicaclaudino/repos'
-        );
-        setRepo(response.data);
-      } catch (error) {
-        console.error('Capturei um erro: ' + error);
+        const response = await Axios.get('https://api.github.com/users/angelicaclaudino/repos')
+        setReposFromApi(response.data)
+      }
+      catch(err) {
+        console.error("Erro capturado: " + err)
       }
     }
+    getData()
+  }, [])
 
-    getRepo();
-  }, []);
+  useEffect(() => {
+    const reposFiltered = reposFromApi.filter((repo) => {
+      return repo.name.toLowerCase().includes(inputValue.toLowerCase())
+    })
+    setReposFiltered(reposFiltered)
+  }, [inputValue, reposFromApi])
 
   return (
-    <div className='repositorios'>
-        <h3>Meus repositórios:</h3>
-        <ul>
-        {repo.map((repo) => (
-          <>
+    <div className="search">
+      <input 
+        placeholder="Digite um repositório para buscar" 
+        onChange={handleChange} 
+      />
+      {reposFiltered.map(repo => {
+        return (
+          <div key={repo.id} className="card">
+            <Subtitle content={repo.name} />
+            <Text content={repo.description} />
             <a href={repo.html_url} target="_blank">
-                <h2 key={repo.id}>{repo.name}</h2>
-            </a>               
-          </>
-        ))}
-      </ul>
+              Conferir
+              <GoArrowRight />
+            </a>
+          </div>
+        )
+      })}
     </div>
-  );
+  )
+}
 
+export default Search
 
-};
-
-export default Search;

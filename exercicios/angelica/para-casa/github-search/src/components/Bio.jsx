@@ -1,11 +1,11 @@
 import Subtitle from './Subtitle'
-import Paragrafo from './Paragrafo'
+import Text from './Text'
 import Image from './Image'
 const Bio = (props) => {
     return (
         <div className="Bio">
             <Subtitle subtitle={props.text}/>
-            <Paragrafo text= {props.descricao}/>
+            <Text text= {props.descricao}/>
             <a href="#" onclick="window.location.href='https://github.com/${login}'" target ="_blank">
                 <Image class="image" image={props.image}/>
             </a>

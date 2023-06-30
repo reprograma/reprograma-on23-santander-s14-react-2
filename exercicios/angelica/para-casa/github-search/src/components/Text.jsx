@@ -1,4 +1,4 @@
-const Text = ({ content }) => {
+const Text = ({content}) => {
   return (
     <p>{content}</p>
   )
