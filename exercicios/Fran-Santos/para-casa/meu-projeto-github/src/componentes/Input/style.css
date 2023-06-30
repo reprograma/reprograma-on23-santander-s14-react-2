@@ -1,0 +1,8 @@
+input{
+    width: 351px;
+    height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    background: rgba(34, 12, 66, 0.3);
+}
