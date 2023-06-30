@@ -1,0 +1,23 @@
+
+.not-found__container{
+	display: flex;
+	flex-direction: column;
+	width: 45%;
+	align-items: center;
+	justify-content: center;
+	gap: .5rem;
+
+}
+.not-found__title{
+	font-size: 2rem;
+	color: var(--primary);
+	text-align: center;
+	
+}
+.not-found__subtitle{
+	font-size: 1.5rem;
+	color: var(--text-color);
+}
+.not-found__img{
+	width: 100%;
+}

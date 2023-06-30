@@ -1,0 +1,53 @@
+.header__container {
+	width: 100%;
+	background-color: var(--second-backgroundcolor);
+	height: 10vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+}
+.header__logo {
+	margin-left: 0.8125rem;
+}
+.header__iteractive{
+	width: 60%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 1rem;
+}
+.header__form {
+	border: solid 2px var(--text-color);
+	border-radius: 0.5rem;
+	padding: 0.7rem 0.6875rem;
+	width: 85%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-height: 8vh;
+}
+.form__input {
+	border: none;
+	outline: none;
+	width: 80%;
+	color: var(--text-color);
+	font-size: 1.1rem;
+	background-color: transparent;
+}
+.form__search-button {
+	width: 1.125rem;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+.header__night-mode-button{
+	margin-right: 0.8125rem;
+	max-width: 10%;
+	width: 2rem;
+	text-align: center;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	font-size: 1.3rem;
+}

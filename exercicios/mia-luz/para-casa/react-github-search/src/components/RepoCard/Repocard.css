@@ -1,0 +1,38 @@
+
+
+.repos__card {
+	border-radius: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--second-backgroundcolor);
+	min-height: 8rem;
+	max-width: 100%;
+	position: relative;
+	box-shadow: 7px 8px 5px 0px rgba(0, 0, 0, 0.43);
+	-webkit-box-shadow: 7px 8px 5px 0px rgba(0, 0, 0, 0.43);
+	-moz-box-shadow: 7px 8px 5px 0px rgba(0, 0, 0, 0.43);
+}
+.repos__repo-link{
+	text-decoration: none;
+}
+.repos__repo-name {
+	font-size: 1.125rem;
+	color: var(--primary);
+	margin: 0.8rem 1.25rem 0.3rem 0.8rem;
+}
+.repos__repo-description {
+	margin: 0rem 1.25rem 0.3rem 0.8rem;
+	padding-bottom: 1.5rem;
+	color: var(--text-color);
+	text-align: left;
+}
+.repos__repo-details {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: absolute;
+	bottom: 0.6rem;
+	left: 0.8rem;
+	right: 1.25rem;
+	color: var(--text-color);
+}
