@@ -15,7 +15,7 @@ const Search = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await Axios.get('https://api.github.com/users/lilitbandeira/repos')
+        const response = await Axios.get('https://api.github.com/users/ayndiara/repos')
         setReposFromApi(response.data)
       }
       catch(err) {
